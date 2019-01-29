@@ -12,19 +12,10 @@
 # ------------------------------------------------------------------------ #
 # Histórico:
 #
-#   v1.0 03/10/2018, Mateus:
-#       - Início do programa
-#       - Conta com a funcionalidade X
-#   v1.1 10/10/2018, Lucas:
-#       - Alterado parametro XXXXX
+#   v1.0 Metodo inicial
 # ------------------------------------------------------------------------ #
 # Testado em:
 #   bash 4.4.19
-# ------------------------------------------------------------------------ #
-# Agradecimentos:
-#
-# 	Joãozinho - Encontrou um bug na parte de login.
-#	  Mariazinha - Enviou uma sugestão de adicionar o -h.
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- VARIÁVEIS ----------------------------------------- #
