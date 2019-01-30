@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# teste.sh - Verificar se existe atualização do Dominio
+# sefaz.sh - Verificar se existe atualização do Dominio
 #
 # Site:       https://wesllenmatias.com.br
 # Autor:      Wesllen Matias
@@ -25,8 +25,8 @@ bot_token='625744069:AAGTXbrysLdWXsapmqhI9SPYpgledYJWPa4'
 # Inicializando o bot
 ShellBot.init --token "$bot_token"
 # ------------------------------- TESTES ----------------------------------------- #
-[ ! -x $( which lynx ) ] && apt install lynx -y
-[ ! -x $( which jq ) ] && apt install jq -y
+[ ! -x $(which lynx) ] && apt install lynx -y
+[ ! -x $(which jq) ] && apt install jq -y
 
 
 
