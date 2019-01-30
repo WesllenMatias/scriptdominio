@@ -58,7 +58,8 @@ do
                 '/dominio')
                     # Envia mensagem ao remetente.
                     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                         --text "$infos" \
+                                         --text "Olá *${message_from_first_name[$id]}*, seguem atualizações Disponiveis:
+$infos" \
                                          --parse_mode markdown
                 ;;
             esac
