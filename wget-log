@@ -1,11 +1,0 @@
---2019-01-30 10:58:08--  http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=0.00
-Resolvendo www.nfe.fazenda.gov.br (www.nfe.fazenda.gov.br)... 200.198.239.19
-Conectando-se a www.nfe.fazenda.gov.br (www.nfe.fazenda.gov.br)|200.198.239.19|:80... conectado.
-A requisição HTTP foi enviada, aguardando resposta... 200 OK
-Tamanho: 60009 (59K) [text/html]
-Salvando em: “disponibilidade.aspx?versao=0.00”
-
-disponibilidade.aspx?versao=0.00             0%[                                                                                      ]       0  --.-KB/s               disponibilidade.aspx?versao=0.00           100%[=====================================================================================>]  58,60K   295KB/s    em 0,2s    
-
-2019-01-30 10:58:09 (295 KB/s) - “disponibilidade.aspx?versao=0.00” salvo [60009/60009]
-
