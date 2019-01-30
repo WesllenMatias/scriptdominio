@@ -30,8 +30,13 @@ ShellBot.init --token "$bot_token"
 
 
 
+#status="$(lynx -source http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=0.00 | \
+#grep SVC-AN | sed 's/<td>/Status Sefaz RN: /;s/<\/td.*src="/ /;s/" \/>.*src="/ /;s/imagens.*\/td>/✅/')"
+
 status="$(lynx -source http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=0.00 | \
-grep SVC-AN | sed 's/<td>/Status Sefaz RN: /;s/<\/td.*src="/ /;s/" \/>.*src="/ /;s/imagens.*\/td>/✅/')"
+grep imagens/bola_ | sed 's/<td>/Status Sefaz: /;s/<\/td>.*src="/ /;s/".*//;s/<img.id=//' | \
+sed -e 's,imagens/bola_verde_P.png,✅,g;s,imagens/bola_amarela_P.png,⚠️,g;s,imagens/bola_vermelho_P.png,❌,g')"
+
 
 # loop
 while :
@@ -52,7 +57,7 @@ do
                 '/sefaz')
                     # Envia mensagem ao remetente.
                     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                         --text "Olá *${message_from_first_name[$id]}*, abaixo Status NF-E RN:
+                                         --text "Olá *${message_from_first_name[$id]}*, abaixo Status NF-E:
 $status" \
                                          --parse_mode markdown
                 ;;
