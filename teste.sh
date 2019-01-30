@@ -21,12 +21,13 @@
 source ShellBot.sh
 
 # ------------------------------- VARIÁVEIS ----------------------------------------- #
-bot_token=' 625744069:AAGTXbrysLdWXsapmqhI9SPYpgledYJWPa4 '
+bot_token='625744069:AAGTXbrysLdWXsapmqhI9SPYpgledYJWPa4'
 # ------------------------------------------------------------------------ #
 # Inicializando o bot
 ShellBot.init --token "$bot_token"
 # ------------------------------- TESTES ----------------------------------------- #
-[! -x $(wich lynx)]&& apt install lynx -y
+[ ! -x $( which lynx ) ] && apt install lynx -y
+[ ! -x $( which jq ) ] && apt install jq -y
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- FUNÇÕES ----------------------------------------- #
@@ -36,7 +37,7 @@ ShellBot.init --token "$bot_token"
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
 
 
-infos="$( lynx -source http://download.dominiosistemas.com.br/atualizacao/contabil/101b01/atualizacoes/ | grep C101 )"
+infos="$( lynx -source http://download.dominiosistemas.com.br/atualizacao/contabil/101b01/atualizacoes/ | grep C101 | sed 's/<img.*exe">//;s/<.*\/a>//')"
 #echo "$infos" | sed 's/<img.*exe">//;s/<.*\/a>//'
 # loop
 while :
@@ -57,7 +58,7 @@ do
                 '/dominio')
                     # Envia mensagem ao remetente.
                     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                         --text "$infos" | sed 's/<img.*exe">//;s/<.*\/a>//' \
+                                         --text "$infos" \
                                          --parse_mode markdown
                 ;;
             esac
