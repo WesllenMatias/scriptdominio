@@ -44,6 +44,7 @@ backup="$(find "$dir" -name teste.txt )"
 # ------------------------------------------------------------------------ #
 [ "$backup" != 0 ] && cp /home/$USER/Documentos/teste.txt /home/$USER/Documentos/testes/ | \
 ShellBot.sendMessage --chat_id $id \
-                     --text "O *Backup* `date +%d-%m-%Y` foi realizado com sucesso!
-$list" \
+                     --text "💾 O *Backup* `date +%d-%m-%Y` foi realizado com sucesso! ✅
+
+📂 _$list _" \
                      --parse_mode markdown
