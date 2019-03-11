@@ -61,6 +61,7 @@ do
                                          --text "Olá *${message_from_first_name[$id]}*, seguem atualizações Disponiveis:
 $infos" \
                                          --parse_mode markdown
+             $infos=null
                 ;;
             esac
          fi

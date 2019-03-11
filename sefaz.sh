@@ -34,8 +34,8 @@ ShellBot.init --token "$bot_token"
 #grep SVC-AN | sed 's/<td>/Status Sefaz RN: /;s/<\/td.*src="/ /;s/" \/>.*src="/ /;s/imagens.*\/td>/✅/')"
 
 status="$(lynx -source http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx?versao=0.00 | \
-grep imagens/bola_ | sed 's/<td>/Status Sefaz: /;s/<\/td>.*src="/ /;s/".*//;s/<img.id=//' | \
-sed -e 's,imagens/bola_verde_P.png,✅,g;s,imagens/bola_amarela_P.png,⚠️,g;s,imagens/bola_vermelho_P.png,❌,g')"
+          grep imagens/bola_ | sed 's/<td>/Status Sefaz: /;s/<\/td>.*src="/ /;s/".*//;s/<img.id=//' | \
+          sed -e 's,imagens/bola_verde_P.png,✅,g;s,imagens/bola_amarela_P.png,⚠️,g;s,imagens/bola_vermelho_P.png,❌,g')"
 
 #lynx -source http://www.nfe.fazenda.gov.br/portal/disponibilidade.aspx\?versao\=0.00 | grep imagens/bola_ | sed 's/<td>/Status Sefaz: /;s/.<\/td><td><img src="." / / ;s/.<\/td><td><img src="/ /;s/.<\/td><td><img src="/ /;s/.<\/td><td><img src="/ /;s/.<\/td><td><img src="/ /;s/.<\/td><td><img src="/ /;s/." \/><\/td><td>/ /;s/.<\/td><td><img src="/ /' | sed -e 's,imagens/bola_verde_P.png,✅,g;s,imagens/bola_amarela_P.png,⚠<fe0f>,g;s,imagens/bola_vermelho_P.png,❌,g'
 
@@ -61,6 +61,7 @@ do
                                          --text "Olá *${message_from_first_name[$id]}*, abaixo Status NF-E:
 $status" \
                                          --parse_mode markdown
+           #$status=""
                 ;;
             esac
          fi
