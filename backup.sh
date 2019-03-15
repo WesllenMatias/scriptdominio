@@ -31,7 +31,6 @@ ShellBot.init --token "$bot_token"
 # ------------------------------- VARIAVEIS ----------------------------------------- #
 
 id='-334711746'
-ok="Relaizado Backup com sucesso!"
 erro="Erro durante o backup"
 dir=/home/$USER/Documentos/
 arq=teste.txt
